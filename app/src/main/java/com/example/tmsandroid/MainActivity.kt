@@ -3,6 +3,7 @@ package com.example.tmsandroid
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -11,6 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         lists()
+
+        val intent = Intent(this, SecondActivity::class.java)
+        startActivity(intent)
     }
 
     private fun lists() {
@@ -33,6 +37,6 @@ class MainActivity : AppCompatActivity() {
         Log.d("TEST_ANDROID", vocabulary.entries.joinToString {
             "${it.key}: ${it.value}"
         })
-//        Log.d ("ANDROID_TEST", vocabulary.map { "${it.key}: ${it.value}" }.joinToString (", "))
+
     }
 }
