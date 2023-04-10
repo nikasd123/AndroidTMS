@@ -12,12 +12,6 @@
         android:theme="@style/Theme.TMSAndroid"
         tools:targetApi="31">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Androidly Button" />
-
         <activity
             android:name=".SecondActivity"
             android:exported="false"
