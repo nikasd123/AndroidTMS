@@ -19,9 +19,6 @@ class RegistrationActivity : AppCompatActivity() {
     private fun passwordLengthCheck() {
         val button = findViewById<Button>(R.id.button)
 
-        // val passwordText = findViewById<EditText>(R.id.inputPassword)
-        // val passwordLength = passwordText.text.length
-
         val toSecondActivity = Intent(this, SecondActivity::class.java)
         val passwordText = findViewById<EditText>(R.id.inputPassword)
 
