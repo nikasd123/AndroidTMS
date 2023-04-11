@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Registration</string>
+    <string name="hello_user">Welcome to home page</string>
 </resources>
