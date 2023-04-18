@@ -1,3 +1,5 @@
+import android.renderscript.ScriptGroup
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -19,6 +21,7 @@ android {
 
     buildTypes {
         release {
+            Binding true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
