@@ -19,7 +19,7 @@ class RegistrationActivity : AppCompatActivity() {
     private fun passwordLengthCheck() {
         val button = findViewById<Button>(R.id.button)
 
-        val toSecondActivity = Intent(this, SecondActivity::class.java)
+        val toHomePageActivity = Intent(this, HomePageActivity::class.java)
         val passwordText = findViewById<EditText>(R.id.inputPassword)
 
         passwordText.addTextChangedListener(object : TextWatcher {
@@ -40,7 +40,7 @@ class RegistrationActivity : AppCompatActivity() {
                 if (passwordLength > 8) {
                     button.isEnabled = true
                     button.setOnClickListener {
-                        startActivity(toSecondActivity)
+                        startActivity(toHomePageActivity)
                         onStop()
                     }
                 }
