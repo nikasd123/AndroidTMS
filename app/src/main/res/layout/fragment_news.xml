@@ -5,8 +5,9 @@
     android:layout_height="wrap_content"
     android:visibility="visible"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.NewsFragment"
-    tools:visibility="visible">
+    tools:context=".fragments.LanguagesFragment"
+    tools:visibility="visible"
+    android:background="@color/white">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

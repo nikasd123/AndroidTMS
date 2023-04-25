@@ -89,11 +89,11 @@ class LanguagesFragment : Fragment() {
         val button = view?.findViewById<Button>(R.id.to_fragment_button)
         val fragmentManager = requireActivity().supportFragmentManager
 
-        button?.setOnClickListener{
+        button?.setOnClickListener {
             val fragment = NewsFragment.newInstance()
             val transaction = fragmentManager.beginTransaction()
 
-            transaction.replace(R.id.news_fragment, fragment)
+            transaction.replace(R.id.fragment_container_view, fragment)
             transaction.addToBackStack(null)
             transaction.commit()
         }

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.LanguagesFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.LanguagesFragment">
+    android:name="com.example.tmsandroid.fragments.LanguagesFragment"
+    android:id="@+id/fragment_container_view"
+    android:background="@color/white">
 
     <Spinner
         android:id="@+id/spinner_of_languages"
@@ -12,8 +16,8 @@
         android:layout_height="wrap_content"
         android:spinnerMode="dropdown"
         android:entries="@array/Languages"
-        tools:ignore="SpeakableTextPresentCheck"
         android:background="@color/BlueGrey"
+        tools:ignore="SpeakableTextPresentCheck"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

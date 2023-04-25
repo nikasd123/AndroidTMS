@@ -11,7 +11,7 @@ class HomePageActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.languages_fragment, LanguagesFragment.newInstance())
+            .add(R.id.languages_fragment, LanguagesFragment.newInstance())
             .commit()
     }
 
