@@ -4,7 +4,9 @@
     <string name="login_hint">Login:</string>
     <string name="password_hint">Password:</string>
     <string name="login_button">Login</string>
-    <string name="to_another_fragment_button">to another fragment</string>
+    <string name="title_text">Username</string>
+    <string name="description_text">Description</string>
+    <string name="logo_description">unknown user</string>
     <string-array name="Languages">
         <item>Java</item>
         <item>Kotlin</item>

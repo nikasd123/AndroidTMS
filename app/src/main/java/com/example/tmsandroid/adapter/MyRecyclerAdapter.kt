@@ -3,29 +3,34 @@ package com.example.tmsandroid.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmsandroid.R
 
 class MyRecyclerAdapter(
-    private val names: List<String>
-) : RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder>() {
+    private val dataset: List<MyData> = mutableListOf()
+) : RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>() {
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val titleTextView: TextView = itemView.findViewById(R.id.title_text)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.description_text)
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val avatar: ImageView = view.findViewById(R.id.avatar)
+        val userName: TextView = view.findViewById(R.id.user_name)
+        val description: TextView = view.findViewById(R.id.description)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_item, parent, false)
-        return MyViewHolder(itemView)
+            .inflate(R.layout.news_item, parent, false) as View
+
+        return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.titleTextView.text = names[position]
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = dataset[position]
+        holder.avatar.setImageResource(item.avatarId)
+        holder.userName.text = item.userName
+        holder.description.text = item.description
     }
 
-    override fun getItemCount(): Int = names.size
-
+    override fun getItemCount() = dataset.size
 }

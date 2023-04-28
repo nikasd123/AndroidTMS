@@ -8,11 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmsandroid.R
+import com.example.tmsandroid.adapter.MyData
 import com.example.tmsandroid.adapter.MyRecyclerAdapter
 import com.example.tmsandroid.databinding.FragmentNewsBinding
 
 class NewsFragment : Fragment() {
-    private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentNewsBinding
 
     override fun onCreateView(
@@ -31,13 +31,16 @@ class NewsFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.recyclerView.adapter = MyRecyclerAdapter(listOfElements())
+        binding.recyclerView.adapter = MyRecyclerAdapter(listOfItems())
     }
 
-    private fun listOfElements(): List<String> {
-        val data = mutableListOf<String>()
-        (0..50).forEach { i -> data.add("$i item") }
-        return data
+    private fun listOfItems(): List<MyData> {
+        val items = mutableListOf<MyData>()
+        for (i in 1..20) {
+            items.add(MyData(R.id.avatar, "User $i", "Description $i"))
+        }
+
+        return items
     }
 
     companion object {

@@ -2,7 +2,7 @@ package com.example.tmsandroid
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tmsandroid.fragments.LanguagesFragment
+import com.example.tmsandroid.fragments.NewsFragment
 
 class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +11,7 @@ class HomePageActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.languages_fragment, LanguagesFragment.newInstance())
+            .add(R.id.news_fragment, NewsFragment.newInstance())
             .commit()
     }
 
