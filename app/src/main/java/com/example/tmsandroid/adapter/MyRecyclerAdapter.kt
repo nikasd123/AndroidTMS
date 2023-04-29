@@ -20,17 +20,27 @@ class MyRecyclerAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.news_item, parent, false) as View
+            .inflate(R.layout.chat_item, parent, false) as View
 
         return ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = dataset[position]
+
         holder.avatar.setImageResource(item.avatarId)
         holder.userName.text = item.userName
         holder.description.text = item.description
+
+
+        holder.itemView.setOnClickListener { view ->
+
+        }
     }
 
     override fun getItemCount() = dataset.size
+
+    interface OnItemClickListener {
+        fun onItemClick(data: MyData)
+    }
 }

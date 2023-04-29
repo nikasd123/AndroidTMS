@@ -37,7 +37,11 @@ class NewsFragment : Fragment() {
     private fun listOfItems(): List<MyData> {
         val items = mutableListOf<MyData>()
         for (i in 1..20) {
-            items.add(MyData(R.id.avatar, "User $i", "Description $i"))
+            items.add(
+                MyData(
+                    R.drawable.unknown_user_logo, "User $i", "Description $i"
+                )
+            )
         }
 
         return items
