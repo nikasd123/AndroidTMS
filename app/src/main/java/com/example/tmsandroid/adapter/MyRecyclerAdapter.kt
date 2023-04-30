@@ -33,14 +33,16 @@ class MyRecyclerAdapter(
         holder.description.text = item.description
 
 
-        holder.itemView.setOnClickListener { view ->
-
-        }
+//        holder.itemView.setOnClickListener { view ->
+//            holder.itemView.setOnClickListener {
+//                listener.onItemClick(position)
+//            }
+//        }
     }
-
-    override fun getItemCount() = dataset.size
 
     interface OnItemClickListener {
-        fun onItemClick(data: MyData)
+        fun onItemClick(data: Int)
     }
+    override fun getItemCount() = dataset.size
+
 }

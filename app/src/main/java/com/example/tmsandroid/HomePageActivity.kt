@@ -2,7 +2,8 @@ package com.example.tmsandroid
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tmsandroid.fragments.NewsFragment
+import com.example.tmsandroid.fragments.ChatsFragment
+import com.example.tmsandroid.fragments.RegistrationFragment
 
 class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +12,7 @@ class HomePageActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.news_fragment, NewsFragment.newInstance())
+            .add(R.id.registration_fragment, RegistrationFragment())
             .commit()
     }
 

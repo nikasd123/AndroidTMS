@@ -6,20 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.tmsandroid.R
 import com.example.tmsandroid.adapter.MyData
 import com.example.tmsandroid.adapter.MyRecyclerAdapter
-import com.example.tmsandroid.databinding.FragmentNewsBinding
+import com.example.tmsandroid.databinding.FragmentChatsBinding
 
-class NewsFragment : Fragment() {
-    private lateinit var binding: FragmentNewsBinding
+
+class ChatsFragment : Fragment() {
+    private lateinit var binding: FragmentChatsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentNewsBinding.inflate(inflater, container, false)
+        binding = FragmentChatsBinding.inflate(inflater, container, false)
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         return binding.root
     }
@@ -49,6 +49,6 @@ class NewsFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = NewsFragment()
+        fun newInstance() = ChatsFragment()
     }
 }

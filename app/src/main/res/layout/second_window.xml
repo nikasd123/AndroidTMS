@@ -7,7 +7,7 @@
     tools:context=".HomePageActivity">
 
     <FrameLayout
-        android:id="@+id/languages_fragment"
+        android:id="@+id/registration_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
     </FrameLayout>
     
     <FrameLayout
-        android:id="@+id/news_fragment"
+        android:id="@+id/chatss_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
