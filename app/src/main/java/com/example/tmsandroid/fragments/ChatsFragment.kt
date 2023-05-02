@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmsandroid.R
 import com.example.tmsandroid.adapter.MyData
-import com.example.tmsandroid.adapter.MyRecyclerAdapter
+import com.example.tmsandroid.adapter.ChatItemAdapter
 import com.example.tmsandroid.databinding.FragmentChatsBinding
 
 
@@ -31,7 +31,7 @@ class ChatsFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.recyclerView.adapter = MyRecyclerAdapter(listOfItems())
+        binding.recyclerView.adapter = ChatItemAdapter(listOfItems())
     }
 
     private fun listOfItems(): List<MyData> {

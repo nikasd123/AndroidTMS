@@ -7,18 +7,19 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide.init
 import com.example.tmsandroid.R
 import com.example.tmsandroid.fragments.UserInfoFragment
 
-class MyRecyclerAdapter(
+class ChatItemAdapter(
     private val dataset: List<MyData> = mutableListOf()
-) : RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<ChatItemAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         val avatar: ImageView = view.findViewById(R.id.avatar)
         val userName: TextView = view.findViewById(R.id.user_name)
         val description: TextView = view.findViewById(R.id.description)
+
+//        private val navController = navView.findNavController()
 
         init {
             itemView.setOnClickListener(this)

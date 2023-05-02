@@ -48,12 +48,6 @@ class RegistrationFragment : Fragment() {
 
                 if (passwordLength > 8) {
                     binding.button.isEnabled = true
-//                    binding.button.setOnClickListener {
-//                        val action = MyFragmentDirections.actionMyFragmentToAnotherFragment()
-//                        val navController = Navigation.findNavController(requireView())
-//                        navController.navigate(action)
-//                    }
-
                     val fragmentManager = requireActivity().supportFragmentManager
 
                     binding.button.setOnClickListener {
