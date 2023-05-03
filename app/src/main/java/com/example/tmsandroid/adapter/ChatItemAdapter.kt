@@ -19,8 +19,6 @@ class ChatItemAdapter(
         val userName: TextView = view.findViewById(R.id.user_name)
         val description: TextView = view.findViewById(R.id.description)
 
-//        private val navController = navView.findNavController()
-
         init {
             itemView.setOnClickListener(this)
         }

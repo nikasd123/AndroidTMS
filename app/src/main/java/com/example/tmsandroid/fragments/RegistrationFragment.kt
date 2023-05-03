@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.tmsandroid.R
 import com.example.tmsandroid.databinding.RegistrationFragmentBinding
@@ -52,8 +51,7 @@ class RegistrationFragment : Fragment() {
                     binding.button.isEnabled = true
 
                     binding.button.setOnClickListener {
-                        val action = RegistrationFragmentDirections.actionRegistrationToChats()
-                        findNavController().navigate(action)
+                        findNavController().navigate(R.id.action_registration_to_chats)
                     }
                 }
             }
