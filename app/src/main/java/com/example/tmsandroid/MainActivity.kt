@@ -2,6 +2,7 @@ package com.example.tmsandroid
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import com.example.tmsandroid.fragments.RegistrationFragment
 
 class MainActivity : AppCompatActivity() {
@@ -13,10 +14,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openRegistrationFragment() {
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.registration_fragment, RegistrationFragment())
+        val registrationFragment = RegistrationFragment()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.registration_fragment, registrationFragment)
             .commit()
     }
-
 }

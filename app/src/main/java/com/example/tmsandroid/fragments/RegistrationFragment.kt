@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.example.tmsandroid.R
 import com.example.tmsandroid.databinding.RegistrationFragmentBinding
 
@@ -48,15 +50,10 @@ class RegistrationFragment : Fragment() {
 
                 if (passwordLength > 8) {
                     binding.button.isEnabled = true
-                    val fragmentManager = requireActivity().supportFragmentManager
 
                     binding.button.setOnClickListener {
-                        val fragment = ChatsFragment.newInstance()
-                        val transaction = fragmentManager.beginTransaction()
-
-                        transaction.replace(R.id.registration_fragment, fragment)
-                        transaction.addToBackStack(null)
-                        transaction.commit()
+                        val action = RegistrationFragmentDirections.actionRegistrationToChats()
+                        findNavController().navigate(action)
                     }
                 }
             }
