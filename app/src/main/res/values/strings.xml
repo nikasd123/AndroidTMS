@@ -1,19 +1,18 @@
 <resources>
+<!--    application text-->
     <string name="app_name">Registration</string>
     <string name="hello_user">home page</string>
+<!--    button texts & hints-->
+    <string name="login_button">Login</string>
     <string name="login_hint">Login:</string>
     <string name="password_hint">Password:</string>
-    <string name="login_button">Login</string>
+    <string name="secret_button">To secret window</string>
+<!--    chats-->
     <string name="title_text">Username</string>
     <string name="description_text">Description</string>
     <string name="logo_description">unknown user</string>
     <string name="unknown_username">Unknown user</string>
-    <string-array name="Languages">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>Swift</item>
-        <item>Python</item>
-        <item>Scala</item>
-        <item>Perl</item>
-    </string-array>
+<!--    secret text-->
+    <string name="secret_text">This was navigation with fragment Manager</string>
+
 </resources>

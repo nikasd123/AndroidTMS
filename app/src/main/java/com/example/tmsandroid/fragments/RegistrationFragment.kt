@@ -7,24 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.tmsandroid.R
 import com.example.tmsandroid.databinding.RegistrationFragmentBinding
 
-class RegistrationFragment : Fragment() {
-    lateinit var binding: RegistrationFragmentBinding
+class RegistrationFragment : Fragment(R.layout.registration_fragment) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = RegistrationFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    lateinit var binding: RegistrationFragmentBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = RegistrationFragmentBinding.bind(view)
 
         passwordLengthCheck()
     }
@@ -51,7 +45,9 @@ class RegistrationFragment : Fragment() {
                     binding.button.isEnabled = true
 
                     binding.button.setOnClickListener {
-                        findNavController().navigate(R.id.action_registration_to_chats)
+                        findNavController().navigate(
+                            R.id.action_registration_fragment_to_chats_fragment
+                        )
                     }
                 }
             }

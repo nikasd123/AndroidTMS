@@ -1,10 +1,10 @@
 package com.example.tmsandroid.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmsandroid.R
 import com.example.tmsandroid.adapter.MyData
@@ -12,26 +12,21 @@ import com.example.tmsandroid.adapter.ChatItemAdapter
 import com.example.tmsandroid.databinding.FragmentChatsBinding
 
 
-class ChatsFragment : Fragment() {
+class ChatsFragment : Fragment(R.layout.fragment_chats) {
     private lateinit var binding: FragmentChatsBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentChatsBinding.inflate(inflater, container, false)
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentChatsBinding.bind(view)
+
+        val layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.layoutManager = layoutManager
 
         initRecyclerView()
     }
 
     private fun initRecyclerView() {
-        binding.recyclerView.adapter = ChatItemAdapter(listOfItems())
+        binding.recyclerView.adapter = ChatItemAdapter(listOfItems(), findNavController())
     }
 
     private fun listOfItems(): List<MyData> {
@@ -45,10 +40,5 @@ class ChatsFragment : Fragment() {
         }
 
         return items
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() = ChatsFragment()
     }
 }

@@ -5,33 +5,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmsandroid.R
 import com.example.tmsandroid.fragments.UserInfoFragment
 
 class ChatItemAdapter(
-    private val dataset: List<MyData> = mutableListOf()
+    private val dataset: List<MyData> = mutableListOf(),
+    private val navController: NavController
 ) : RecyclerView.Adapter<ChatItemAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val avatar: ImageView = view.findViewById(R.id.avatar)
         val userName: TextView = view.findViewById(R.id.user_name)
         val description: TextView = view.findViewById(R.id.description)
 
         init {
-            itemView.setOnClickListener(this)
+            itemView.setOnClickListener{
+                navController.navigate(R.id.action_chats_fragment_to_user_info_fragment)
+            }
         }
-
-        override fun onClick(v: View?) {
-            val fragment = UserInfoFragment()
-            val transaction = (v?.context as AppCompatActivity)
-                .supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.user_info_fragment, fragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
