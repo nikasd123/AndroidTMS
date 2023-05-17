@@ -30,23 +30,20 @@ class ChatsFragment : Fragment(R.layout.fragment_chats) {
         val layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.layoutManager = layoutManager
 
-        initRecyclerView()
+        initRecycler()
     }
 
-    private fun initRecyclerView() {
-        binding.recyclerView.adapter = ChatItemAdapter(listOfItems(), findNavController())
-    }
-
-    private fun listOfItems(): List<MyData> {
-        val items = mutableListOf<MyData>()
+    private fun initRecycler() {
         val posts = viewModel?.contactList?.value ?: DomainContactList()
-        for (i in 1..20) {
-            items.add(
-                MyData(
-                    R.drawable.unknown_user_logo, "User $i", "Description $i"
-                )
+
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = ChatItemAdapter(
+                items = posts,
+                onItemClickEvent = {
+                    findNavController().navigate(R.id.action_chats_fragment_to_user_info_fragment)
+                }
             )
         }
-        return items
     }
 }
