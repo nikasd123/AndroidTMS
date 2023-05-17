@@ -1,4 +1,4 @@
-package com.example.tmsandroid.adapter
+package com.example.tmsandroid.app.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmsandroid.R
-import com.example.tmsandroid.fragments.UserInfoFragment
 
 class ChatItemAdapter(
+    //private val items: List<MyData>,
     private val dataset: List<MyData> = mutableListOf(),
     private val navController: NavController
 ) : RecyclerView.Adapter<ChatItemAdapter.ViewHolder>() {

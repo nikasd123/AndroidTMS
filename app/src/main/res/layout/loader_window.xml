@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SplashActivity">
+    tools:context=".app.presentation.activities.SplashActivity">
 
     <ImageView
         android:id="@+id/logo_loader"
