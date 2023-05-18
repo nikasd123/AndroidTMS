@@ -34,12 +34,12 @@ class ChatsFragment : Fragment(R.layout.fragment_chats) {
     }
 
     private fun initRecycler() {
-        val posts = viewModel?.contactList?.value ?: DomainContactList()
+        val contacts = viewModel?.contactList?.value ?: DomainContactList()
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ChatItemAdapter(
-                items = posts,
+                items = contacts,
                 onItemClickEvent = {
                     findNavController().navigate(R.id.action_chats_fragment_to_user_info_fragment)
                 }
