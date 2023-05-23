@@ -32,11 +32,6 @@ class ChatItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val item = items[position]
-//        holder.avatar.setImageResource(item.avatarId)
-//        holder.userName.text = item.userName
-//        holder.description.text = item.description
-
         holder.apply {
             userName.text = items.contacts?.get(position)?.userName
             description.text = items.contacts?.get(position)?.description
