@@ -1,5 +1,6 @@
 package com.example.tmsandroid.app.domain.use_cases
 
+import com.example.tmsandroid.app.data.remote.dto.toContact
 import com.example.tmsandroid.app.domain.repository.ContactsRepository
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -8,5 +9,5 @@ import javax.inject.Singleton
 class GetContactInfoUseCase @Inject constructor(
     private val contactsRepository: ContactsRepository
 ) {
-    fun getContactInfo() = contactsRepository.getContactInfo()
+    fun getContactInfo() = contactsRepository.getContactInfo().toContact()
 }

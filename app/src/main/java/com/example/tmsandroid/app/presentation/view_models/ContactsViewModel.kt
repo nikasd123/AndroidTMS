@@ -22,6 +22,6 @@ class ContactsViewModel @Inject constructor(
     }
 
     private fun getContacts() {
-        _contactList.value = ContactUseCase.
+        _contactList.value = contactUseCase.getContacts()
     }
 }
