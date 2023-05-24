@@ -1,6 +1,6 @@
 package com.example.tmsandroid.app.di.module
 
-import com.example.tmsandroid.app.domain.repository.ContactsRepository
+import com.example.tmsandroid.app.domain.repository.ContactRepository
 import com.example.tmsandroid.app.domain.use_cases.ContactUseCase
 import com.example.tmsandroid.app.domain.use_cases.GetContactInfoUseCase
 import dagger.Module
@@ -12,10 +12,10 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 class UseCasesModule {
     @Provides
-    fun provideContactInfoUseCase(contactsRepository: ContactsRepository) =
+    fun provideContactInfoUseCase(contactsRepository: ContactRepository) =
         GetContactInfoUseCase(contactsRepository = contactsRepository)
 
     @Provides
-    fun provideContactsUseCase(contactRepository: ContactsRepository) =
-        ContactUseCase(contactsRepository = contactRepository)
+    fun provideContactsUseCase(contactRepository: ContactRepository) =
+        ContactUseCase(contactRepository = contactRepository)
 }

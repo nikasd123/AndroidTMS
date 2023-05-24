@@ -106,4 +106,11 @@ class ContactsRemoteImpl : ContactsRemote{
                 description = "Description"
             )
         )
+
+    override fun getContactInfo(): ContactDto =
+        ContactDto(
+            id = 1,
+            userName = "TMS",
+            description = "The best courses on Belarus :)"
+        )
 }
