@@ -16,6 +16,7 @@ class ChatItemAdapter(
 ) : RecyclerView.Adapter<ChatItemAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
+        val avatar: ImageView = view.findViewById(R.id.avatar)
         val userName: TextView = view.findViewById(R.id.user_name)
         val description: TextView = view.findViewById(R.id.description)
     }
