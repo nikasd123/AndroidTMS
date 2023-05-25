@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "418957410276",
+    "project_id": "chats-study",
+    "storage_bucket": "chats-study.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418957410276:android:3f54227ee317589c0f51f1",
+        "android_client_info": {
+          "package_name": "com.example.tmsandroid.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0UEeGNWxofon2OkEWNXe8Uszhjir5Mu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
