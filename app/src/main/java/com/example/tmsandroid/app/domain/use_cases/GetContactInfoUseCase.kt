@@ -7,7 +7,10 @@ import javax.inject.Singleton
 
 @Singleton
 class GetContactInfoUseCase @Inject constructor(
-    private val contactsRepository: ContactRepository
+    private val contactRepository: ContactRepository
 ) {
-    fun getContactInfo() = contactsRepository.getContactInfo().toContact()
+//    suspend fun getContactInfo() =
+//        contactRepository.getContacts().map {
+//            it.toContact()
+//        }
 }

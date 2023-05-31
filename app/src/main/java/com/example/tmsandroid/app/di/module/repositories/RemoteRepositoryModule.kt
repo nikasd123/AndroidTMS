@@ -1,5 +1,6 @@
 package com.example.tmsandroid.app.di.module.repositories
 
+import com.example.tmsandroid.app.data.remote.api.ContactsApi
 import com.example.tmsandroid.app.data.repository.remote.ContactsRemote
 import com.example.tmsandroid.app.data.repository.remote.ContactsRemoteImpl
 import dagger.Module
@@ -12,5 +13,6 @@ import dagger.hilt.components.SingletonComponent
 class RemoteRepositoryModule {
 
     @Provides
-    fun provideContactsRemote(): ContactsRemote = ContactsRemoteImpl()
+    fun provideContactsRemote(contactsApi: ContactsApi): ContactsRemote =
+        ContactsRemoteImpl(contactsApi = contactsApi)
 }

@@ -1,8 +1,8 @@
 package com.example.tmsandroid.app.data.repository.remote
 
-import com.example.tmsandroid.app.data.remote.dto.ContactDto
+import com.example.tmsandroid.app.data.remote.dto.ResponseDto
 
 interface ContactsRemote {
-    fun getContacts(): List<ContactDto>
-    fun getContactInfo(): ContactDto
+    suspend fun getContacts(): ResponseDto
+
 }

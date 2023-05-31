@@ -1,17 +1,19 @@
 package com.example.tmsandroid.app.presentation.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.tmsandroid.R
-import com.example.tmsandroid.app.domain.models.DomainContactList
+import com.example.tmsandroid.app.domain.models.DomainContact
 
 class ChatItemAdapter(
-    private val items: DomainContactList,
+    private val items: List<DomainContact>,
+    private var context: Context,
     private val onItemClickEvent: (View) -> Unit
 ) : RecyclerView.Adapter<ChatItemAdapter.ViewHolder>() {
 
@@ -34,10 +36,14 @@ class ChatItemAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.apply {
-            userName.text = items.contacts?.get(position)?.userName
-            description.text = items.contacts?.get(position)?.description
+            userName.text = items[position].username
+            description.text = items[position].publishedAt
         }
+
+        Glide.with(holder.itemView)
+            .load(items[position].urlToImage)
+            .into(holder.avatar)
     }
 
-    override fun getItemCount(): Int = items.contacts?.size ?: 0
+    override fun getItemCount(): Int = items.size
 }

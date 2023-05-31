@@ -1,24 +1,30 @@
 package com.example.tmsandroid.app.data.remote.dto
 
 import com.example.tmsandroid.app.domain.models.DomainContact
-import com.example.tmsandroid.app.domain.models.DomainContactList
+import com.google.gson.annotations.SerializedName
 
 data class ContactDto(
-    val id: Int,
-    val userName: String?,
-    val description: String?
+    @SerializedName("title")
+    val username: String,
+
+    @SerializedName("description")
+    val description: String,
+
+    @SerializedName("url")
+    val url: String,
+
+    @SerializedName("urlToImage")
+    val urlToImage: String,
+
+    @SerializedName("publishedAt")
+    val publishedAt: String
 )
 
-fun ContactDto.toContact(): DomainContact =
+fun ContactDto.toContact() =
     DomainContact(
-        id = id,
-        userName = userName,
-        description = description
-    )
-
-fun List<ContactDto>.toContactList() =
-    DomainContactList(
-        this.map {
-            it.toContact()
-        }
+        username = username,
+        description = description,
+        url = url,
+        urlToImage = urlToImage,
+        publishedAt = publishedAt
     )

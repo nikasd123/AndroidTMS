@@ -12,8 +12,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 class UseCasesModule {
     @Provides
-    fun provideContactInfoUseCase(contactsRepository: ContactRepository) =
-        GetContactInfoUseCase(contactsRepository = contactsRepository)
+    fun provideContactInfoUseCase(contactRepository: ContactRepository) =
+        GetContactInfoUseCase(contactRepository = contactRepository)
 
     @Provides
     fun provideContactsUseCase(contactRepository: ContactRepository) =

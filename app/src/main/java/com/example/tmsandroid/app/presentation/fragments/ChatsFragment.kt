@@ -7,11 +7,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmsandroid.R
-import com.example.tmsandroid.app.domain.models.DomainContactList
+import com.example.tmsandroid.app.domain.models.DomainContact
 import com.example.tmsandroid.app.presentation.adapters.ChatItemAdapter
 import com.example.tmsandroid.app.presentation.view_models.ContactsViewModel
 import com.example.tmsandroid.databinding.FragmentChatsBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.FieldPosition
 
 
 @AndroidEntryPoint
@@ -26,15 +27,20 @@ class ChatsFragment : Fragment(R.layout.fragment_chats) {
         val layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.layoutManager = layoutManager
 
-        initRecycler()
+        observeContacts()
     }
 
-    private fun initRecycler() {
-        val contacts = viewModel.contactList.value ?: DomainContactList()
+    private fun observeContacts() {
+        viewModel.contactList.observe(viewLifecycleOwner) {
+            initRecycler(it)
+        }
+    }
 
+    private fun initRecycler(contacts: List<DomainContact>) {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ChatItemAdapter(
+                context = context,
                 items = contacts,
                 onItemClickEvent = {
                     findNavController().navigate(R.id.action_chats_fragment_to_user_info_fragment)

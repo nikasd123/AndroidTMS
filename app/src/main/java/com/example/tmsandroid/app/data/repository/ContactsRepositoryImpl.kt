@@ -11,6 +11,6 @@ import javax.inject.Singleton
 class ContactsRepositoryImpl @Inject constructor(
     private val contactsRemote: ContactsRemote
 ) : ContactRepository {
-    override fun getContacts(): List<ContactDto> = contactsRemote.getContacts()
-    override fun getContactInfo(): ContactDto = contactsRemote.getContactInfo()
+    override suspend fun getContacts(): List<ContactDto> =
+        contactsRemote.getContacts().posts.orEmpty()
 }
