@@ -36,7 +36,6 @@ class UserInfoFragment : Fragment(R.layout.user_info) {
 
     private fun initViews() {
         initTextViews()
-        //observeContactInfo()
     }
 
     private fun initTextViews() {
@@ -47,18 +46,4 @@ class UserInfoFragment : Fragment(R.layout.user_info) {
             userInfoDescription.text = contactInfo.description
         }
     }
-
-//    private fun observeContactInfo() {
-//        viewModel.contactInfo.observe(viewLifecycleOwner) {
-//            if (it.isNotEmpty()) {
-//
-//                val contact = it[0]
-//
-//                binding.apply {
-//                    userInfoName.text = contact.username
-//                    userInfoDescription.text = contact.description
-//                }
-//            }
-//        }
-//    }
 }

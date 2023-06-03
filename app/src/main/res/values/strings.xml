@@ -13,6 +13,6 @@
     <string name="logo_description">unknown user</string>
     <string name="unknown_username">Unknown user</string>
 <!--    secret text-->
-    <string name="secret_text">This was navigation with fragment Manager</string>
+    <string name="test_fragment_label">Test Fragment</string>
 
 </resources>
