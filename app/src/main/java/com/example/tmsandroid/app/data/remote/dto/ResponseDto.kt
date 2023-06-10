@@ -7,5 +7,5 @@ data class ResponseDto(
     val totalResults: Int,
 
     @SerializedName("articles")
-    val posts: List<ContactDto>
+    val posts: List<ContactDto>?
 )

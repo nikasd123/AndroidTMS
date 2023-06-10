@@ -1,5 +1,6 @@
 package com.example.tmsandroid.app.data.remote.dto
 
+import com.example.tmsandroid.app.data.local.ContactEntity
 import com.example.tmsandroid.app.domain.models.DomainContact
 import com.google.gson.annotations.SerializedName
 
@@ -23,6 +24,15 @@ data class ContactDto(
 fun ContactDto.toContact() =
     DomainContact(
         username = username,
+        description = description,
+        url = url,
+        urlToImage = urlToImage,
+        publishedAt = publishedAt
+    )
+
+fun ContactDto.toLocalContact() =
+    ContactEntity(
+        title = username,
         description = description,
         url = url,
         urlToImage = urlToImage,
