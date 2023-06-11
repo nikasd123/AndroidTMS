@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".app.presentation.fragments.RegistrationFragment">
 
+    <com.example.tmsandroid.app.presentation.custom.SmileView
+        android:id="@+id/emotionalFaceView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@id/loginInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerInParent="true">
+    </com.example.tmsandroid.app.presentation.custom.SmileView>
+
     <EditText
         android:id="@+id/loginInput"
         android:layout_width="241dp"
