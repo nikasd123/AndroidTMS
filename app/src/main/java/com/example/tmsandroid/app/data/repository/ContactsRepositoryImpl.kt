@@ -1,5 +1,6 @@
 package com.example.tmsandroid.app.data.repository
 
+import com.example.tmsandroid.app.data.local.ContactEntity
 import com.example.tmsandroid.app.data.remote.dto.ContactDto
 import com.example.tmsandroid.app.data.remote.dto.toLocalContact
 import com.example.tmsandroid.app.data.repository.local.ContactsLocal
@@ -27,5 +28,12 @@ class ContactsRepositoryImpl @Inject constructor(
         return contactList
     }
 
+    override suspend fun getLocalContacts(): List<ContactEntity> =
+        contactsLocal.getLocalContacts().orEmpty()
+
+
+    override suspend fun getContactInfoFromLocal(): ContactEntity? {
+        return null
+    }
 
 }
